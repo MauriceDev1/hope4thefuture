@@ -1,8 +1,7 @@
 import { BsBalloonHeartFill } from "solid-icons/bs";
 import { Component, For } from "solid-js";
 import "solid-slider/slider.css";
-import { Slider, SliderButton, SliderProvider, createSlider } from "solid-slider";
-import { A } from "@solidjs/router";
+import { Slider, SliderButton, SliderProvider } from "solid-slider";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "solid-icons/io";
 
 
@@ -110,7 +109,7 @@ const ProgramsHome:Component = () => {
             <SliderProvider>
                 <Slider options={options}>
                     <For each={ProgramPosts}>{
-                        (p,index) => 
+                        (p) => 
                         <div class="w-1/3 h-[70vh] bg-stone-100 relative z-10">
                             <div class="bg-gray-200 h-72 shadow" style={{"background-image":`url(${p.image})`,"background-size":"cover"}}>
             
