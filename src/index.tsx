@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Programs from './pages/Programs';
 import NotFound from './pages/NotFound';
 import WhoAreWe from './pages/WhoAreWe';
+import Donate from './pages/Donate';
 
 render(() => (
   <Router root={MainLayout}>
@@ -19,6 +20,8 @@ render(() => (
     <Route path="/programs" component={Programs} />
     <Route path="/who_are_we" component={WhoAreWe} />
     <Route path="/contact" component={Contact} />
+    <Route path="/donation" component={Donate} />
+    <Route path="/donation/:id" component={Donate} />
     <Route path="/*" component={NotFound} />
   </Router>
 ), document.getElementById("root")!);

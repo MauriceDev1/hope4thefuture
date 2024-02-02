@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js";
+import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/images/download.jpeg"
 import { CgMenuLeft } from 'solid-icons/cg'
 import { useNavigate } from "@solidjs/router";
@@ -9,7 +9,7 @@ const Nav:Component = () => {
     const navigate = useNavigate();
 
     const handleMobileLink = (e:any) => {
-        navigate(`/${e}`)
+        navigate(`${e}`)
         setToggleMobileMenu(false);
     }
 
@@ -70,7 +70,7 @@ const Nav:Component = () => {
                 <div>
                     <ul class="hidden md:flex gap-16">
                         {Buttons.map((b) => (
-                            <button class="w-24 bg-black text-white h-9 rounded">
+                            <button class="w-24 bg-black text-white h-9 rounded" onClick={() => navigate('/donation')}>
                                 {b.text}
                             </button>
                         ))}
@@ -84,30 +84,14 @@ const Nav:Component = () => {
         <div class={`fixed ${toggleMobileMenu() ? 'w-[300px]' : 'w-0'} h-screen bg-purple-400 flex overflow-hidden duration-300 ease-in-out z-50 top-0 right-0 2xl:hidden`}>
             <div class="w-10/12 relative mx-auto text-white">
                 <ul class="">
+                <For each={Links}>{(l) => 
                     <button
-                        onClick={() => handleMobileLink('home')}
+                        onClick={() => handleMobileLink(l.link)}
                         class="w-full"
                     >
-                        <li class="w-full py-4 border-b">Home</li>
+                        <li class="w-full py-4 border-b">{l.text}</li>
                     </button>
-                    <button
-                        onClick={() => handleMobileLink('about')}
-                        class="w-full"
-                    >
-                        <li class="w-full py-4 border-b">About us</li>
-                    </button>
-                    <button
-                        onClick={() => handleMobileLink('services')}
-                        class="w-full"
-                    >
-                        <li class="w-full py-4 border-b">Services</li>
-                    </button>
-                    <button
-                        onClick={() => handleMobileLink('contact')}
-                        class="w-full"
-                    >
-                        <li class="w-full py-4">Contact us</li>
-                    </button>
+                }</For>
                 </ul>
             </div>
         </div>

@@ -2,10 +2,10 @@ import { Component } from "solid-js";
 
 const TeamSection: Component = () => {
     return (
-        <div class="w-full py-16">
+        <div class="w-full py-10">
             <div class="w-11/12 sm:w-9/12 m-auto px-4">
                 <h3 class="text-teal-500 text-xl">The Team</h3>
-                <h2 class="text-5xl text-blue-900 font-semibold py-5">Our staff, board of directors and advisory group.</h2>
+                <h2 class="text-4xl text-blue-900 font-semibold py-5">Our staff, board of directors and advisory group.</h2>
                 <div class="w-full flex flex-wrap pb-10">
                     <div class="w-full pb-10">
                         <h3 class="text-teal-500">DEDICATED AND PASSIONATE TEAM</h3>
@@ -59,29 +59,6 @@ const TeamSection: Component = () => {
                             </h2>
                             <p class="">
                             Talicia Davids is a former teacher's assistant who recently signed a one-year contract with the Yes Programme. She is passionate about education and committed to making a positive impact on the lives of young people.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url()`,"background-size":"cover"}}>
-
-                        </div>
-                        <div class="p-4">
-                            <h2 class="text-lg font-semibold pb-5">
-                            <span class="text-orange-500">D</span>errice <span class="text-orange-500">P</span>age - <span class="text-teal-500">Social Media</span>
-                            </h2>
-                            <p class="">
-                                Derrice Page is a teacher's assistant at Mighty Minds who has recently signed a one-year contract with the Yes Programme. She is dedicated to education and empowering young people.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
                             </p>
                         </div>
                     </div>
@@ -145,19 +122,6 @@ const TeamSection: Component = () => {
                                 </p>
                             </div>
                         </div>
-                        <div class="w-1/2 sm:w-1/4">
-                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                            </div>
-                            <div class="p-4">
-                                <h2 class="text-lg font-semibold pb-5">
-                                    <span class="text-orange-500">M</span>andene <span class="text-orange-500">A</span>dams - <span class="text-gray-50">Director</span>
-                                </h2>
-                                <p class="">
-                                Mandene joined Hope For The Future when her son faced challenges in school due to a learning disability. She fought against the education system to ensure he received proper support, and is committed to helping others in similar situations.
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -166,16 +130,6 @@ const TeamSection: Component = () => {
                 <div class="w-full flex flex-wrap pt-16">
                     <div class="w-full pb-10">
                         <h3 class="text-teal-500">OUR ADVISORY GROUP</h3>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
-                            </p>
-                        </div>
                     </div>
                     <div class="w-1/2 sm:w-1/4">
                         <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url()`,"background-size":"cover"}}>
@@ -188,46 +142,6 @@ const TeamSection: Component = () => {
                             <p class="">
                                 
 Maurice Volkwyn, 36, is a passionate coder who studied at UNISA. With over a decade of experience, he has worked on various projects and is committed to creating innovative solutions using cutting-edge technology.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
-
-                        </div>
-                        <div class="p-4">
-                            <p class="">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fuga eos laboriosam necessitatibus, fugiat enim fugit magnam iusto velit consequatur rerum ducimus corrupti odio, delectus error adipisci saepe temporibus iste!
                             </p>
                         </div>
                     </div>
