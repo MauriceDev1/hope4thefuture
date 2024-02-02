@@ -91,8 +91,8 @@ const Programs:Component = () => {
         <>
             <Hero />
             
-        <div class="w-full py-16 flex">
-            <div class="w-11/12 sm:w-9/12 m-auto sm:px-4 flex flex-wrap">
+        <div class="w-full py-10 flex">
+            <div class="w-11/12 sm:w-10/12 m-auto sm:px-4 flex flex-wrap">
                 <div class="pl-3 w-full">
                     <h3 class="text-teal-500 text-xl">Our Programs</h3>
                     <h2 class="text-4xl text-blue-900 font-semibold py-5">We run various programs</h2>
