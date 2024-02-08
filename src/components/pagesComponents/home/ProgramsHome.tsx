@@ -110,7 +110,7 @@ const ProgramsHome:Component = () => {
                 <Slider options={options}>
                     <For each={ProgramPosts}>{
                         (p) => 
-                        <div class="w-1/3 h-[70vh] bg-stone-100 relative z-10">
+                        <div class="w-1/3 h-[75vh] bg-stone-100 relative z-10">
                             <div class="bg-gray-200 h-72 shadow" style={{"background-image":`url(${p.image})`,"background-size":"cover"}}>
             
                             </div>
@@ -130,10 +130,10 @@ const ProgramsHome:Component = () => {
                         </div>
                     }</For>
                 </Slider>
-                <SliderButton prev class="w-10 absolute left-0 top-0 mt-10 h-[70vh] flex z-10 text-5xl text-teal-600 bg-black bg-opacity-0 hover:bg-opacity-50">
+                <SliderButton prev class="w-10 absolute left-0 top-0 mt-10 h-[74vh] flex z-10 text-5xl text-teal-600 bg-black bg-opacity-0 hover:bg-opacity-50">
                     <IoChevronBackOutline class="m-auto -ml-2"/>
                 </SliderButton>
-                <SliderButton next class="w-10 absolute top-0 mt-10 z-10 right-0  h-[70vh] flex text-5xl text-teal-600 bg-black bg-opacity-0 hover:bg-opacity-50">
+                <SliderButton next class="w-10 absolute top-0 mt-10 z-10 right-0  h-[74vh] flex text-5xl text-teal-600 bg-black bg-opacity-0 hover:bg-opacity-50">
                     <IoChevronForwardOutline class="m-auto"/>
                 </SliderButton>
             </SliderProvider>

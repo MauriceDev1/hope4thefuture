@@ -93,6 +93,9 @@ const Nav:Component = () => {
                     </button>
                 }</For>
                 </ul>
+                <button class="absolute bottom-0">
+                    Donate
+                </button>
             </div>
         </div>
         </>

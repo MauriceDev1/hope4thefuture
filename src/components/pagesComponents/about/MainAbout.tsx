@@ -3,7 +3,7 @@ import CEO from "../../../assets/images/vanessa.jpeg"
 
 const MainAbout:Component = () => {
     return (
-        <div class="w-full flex justify-center py-16">
+        <div class="w-full flex justify-center py-10">
             <div class="w-10/12 sm:w-9/12 flex flex-wrap sm:px-4">
                 <div class="w-full sm:w-2/3">
                     <h3 class="text-teal-500 text-xl">About us</h3>

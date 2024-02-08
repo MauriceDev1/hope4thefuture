@@ -43,21 +43,21 @@ const Footer:Component = () => {
         //     name: 'Blog',
         //     link: '/blog'
         // },
-        {
-            id: 3,
-            name: 'Become A Members',
-            link: '/become_a_member'
-        },
-        {
-            id: 4,
-            name: 'Careers',
-            link: '/careers'
-        },
-        {
-            id: 4,
-            name: 'Recruiter',
-            link: '/recruiter'
-        },
+        // {
+        //     id: 3,
+        //     name: 'Become A Members',
+        //     link: '/become_a_member'
+        // },
+        // {
+        //     id: 4,
+        //     name: 'Careers',
+        //     link: '/careers'
+        // },
+        // {
+        //     id: 4,
+        //     name: 'Recruiter',
+        //     link: '/recruiter'
+        // },
     ]
     
     const SocialLinks = [
