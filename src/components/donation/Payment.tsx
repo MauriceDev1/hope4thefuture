@@ -27,7 +27,7 @@ const Payment: Component<PaymentProps> = ({amount}) => {
         inline.mount('#card-frame');
 
         var form = document.getElementById('payment-form');
-        var submitButton = document.getElementById('pay-button');
+        // var submitButton = document.getElementById('pay-button');
         if(form !== null){
             form.addEventListener('submit', function (event) {
                 event.preventDefault()

@@ -13,8 +13,10 @@ import NotFound from './pages/NotFound';
 import WhoAreWe from './pages/WhoAreWe';
 import Donate from './pages/Donate';
 import Affiliation from './pages/Affiliation';
+import { DonationContextProvider } from './globalContext/DonationsContext';
 
 render(() => (
+  <DonationContextProvider>
   <Router root={MainLayout}>
     <Route path="/" component={Home} />
     <Route path="/about" component={About} />
@@ -26,4 +28,5 @@ render(() => (
     <Route path="/affiliation" component={Affiliation} />
     <Route path="/*" component={NotFound} />
   </Router>
+  </DonationContextProvider>
 ), document.getElementById("root")!);

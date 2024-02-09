@@ -1,24 +1,155 @@
-import { Component, For, createEffect, createSignal, onMount } from "solid-js";
+import { Component, For, createSignal, onMount } from "solid-js";
 import { Slider, SliderButton, SliderProvider } from "solid-slider";
-import { TiTick } from 'solid-icons/ti'
-// import { useGlobalContext } from "../../GlobalContext/NavContext";
 import Payment from "./Payment";
 import { IoCheckmarkOutline, IoChevronBackOutline, IoChevronForwardOutline, IoWarningOutline } from 'solid-icons/io'
-// import { useDonationContext } from "../../GlobalContext/DonationContext";
+import { useDonationContext } from "../../globalContext/DonationsContext";
 import { useParams } from "@solidjs/router";
 
+const amountList:{
+    id: number;
+    amount: string;
+    checked: boolean;
+}[] = ([
+    {
+        id: 1,
+        amount: '50',
+        checked: false,
+    },
+    {
+        id: 2,
+        amount: '100',
+        checked: false,
+    },
+    {
+        id: 3,
+        amount: '300',
+        checked: false,
+    },
+    {
+        id: 4,
+        amount: '500',
+        checked: false,
+    },
+    {
+        id: 5,
+        amount: '800',
+        checked: false,
+    },
+    {
+        id: 6,
+        amount: '1000',
+        checked: false,
+    },
+    {
+        id: 7,
+        amount: '2 ',
+        checked: false,
+    },
+]);
+
+const programPost: {
+    id: number;
+    image: string;
+    title: string;
+    text: string;
+    link: string;
+    raised: string;
+    goal: string;
+}[] = ([
+    {
+        id: 1,
+        image: "https://images.pexels.com/photos/5723194/pexels-photo-5723194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Gender Base:any[]d Violence",
+        text: "Our Gender-Based Violence program is committed to ending violence against women and children and providing support for survivors.",
+        link: "/donation",
+        raised: "10000",
+        goal: "4000000"
+    },
+    {
+        id: 2,
+        image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        title: "Children With Learning Disabilities",
+        text: "Our Children with Learning Disabilities and Support for Parents program is dedicated to providing resources and support for families facing learning challenges.",
+        link: "/donation",
+        raised: "5000",
+        goal: "30000"
+    },
+    {
+        id: 3,
+        image: "https://images.pexels.com/photos/7213361/pexels-photo-7213361.jpeg?auto=compress&cs=tinysrgb&w=600",
+        title: "Youth Development",
+        text: "Our Youth Development and Upskilling program is committed to empowering young people with the skills and resources they need to succeed.",
+        link: "/donation",
+        raised: "20000",
+        goal: "80000"
+    },
+    {
+        id: 4,
+        image: "https://images.pexels.com/photos/10252682/pexels-photo-10252682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Beyond The Blaze",
+        text: "Beyond the Blaze is dedicated to helping victims of fires by providing necessary household goods and support during their time of need.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    },
+    {
+        id: 5,
+        image: "https://images.unsplash.com/photo-1547226706-af7e2c20bcea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+        title: "Back To School Adopt A Child",
+        text: "BACK 2 SCHOOL is committed to providing school uniforms, stationary, and other resources to support children in their education journey.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    },
+    {
+        id: 6,
+        image: "https://images.pexels.com/photos/196648/pexels-photo-196648.jpeg?auto=compress&cs=tinysrgb&w=600",
+        title: "Holiday Programs",
+        text: "Our Holiday Programs provide public holiday events for the community to enjoy and come together to celebrate.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    },
+    {
+        id: 7,
+        image: "https://images.unsplash.com/photo-1557844352-761f2565b576?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        title: "Pensioner Market",
+        text: "Our Pensioners Market is committed to giving back to the elderly community by providing fresh vegetables and food supplies.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    },
+    {
+        id: 8,
+        image: "https://images.pexels.com/photos/7114755/pexels-photo-7114755.jpeg?auto=compress&cs=tinysrgb&w=600",
+        title: "Flourish",
+        text: "FLOURISH is dedicated to addressing teen pregnancy by providing support, education, and resources to young parents in need.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    },
+    {
+        id: 9,
+        image: "https://images.unsplash.com/photo-1639696318296-2079d8a9216b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        title: "Feeding Scheme",
+        text: "Our Feeding Scheme provides food to the communities of Heideveld and Bonteheuwel through our dedicated kitchens and volunteers.",
+        link: "/donation",
+        raised: "1000",
+        goal: "80000"
+    }
+]);
 
 const SelectDonation: Component = () => {
-    const {id} = useParams()
-    // const {setMenuIndex} = useGlobalContext()
-    // const {
-    //     setProgram,
-    //     setAmount,
-    //     setName,
-    //     setSurname,
-    //     setEmail,
-    //     setCellphone
-    // } = useDonationContext()
+    const {id} = useParams();
+    const {
+        setProgram,
+        setAmount,
+        setName,
+        setSurname,
+        setEmail,
+        setCellphone
+    } = useDonationContext()
+
     const [formData, setFormData] = createSignal({
         program: '',
         amount: '',
@@ -43,90 +174,6 @@ const SelectDonation: Component = () => {
     const [buttonAmountSelect, setButtonAmountSelect] = createSignal(false);
 
     const [detailsCompleted, setDetailsCompleted] = createSignal(false);
-    
-    const [programPost, setProgramPosts] = createSignal([
-        {
-            id: 1,
-            image: "https://images.pexels.com/photos/5723194/pexels-photo-5723194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "Gender Based Violence",
-            text: "Our Gender-Based Violence program is committed to ending violence against women and children and providing support for survivors.",
-            link: "/donation",
-            raised: "10000",
-            goal: "4000000"
-        },
-        {
-            id: 2,
-            image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            title: "Children With Learning Disabilities",
-            text: "Our Children with Learning Disabilities and Support for Parents program is dedicated to providing resources and support for families facing learning challenges.",
-            link: "/donation",
-            raised: "5000",
-            goal: "30000"
-        },
-        {
-            id: 3,
-            image: "https://images.pexels.com/photos/7213361/pexels-photo-7213361.jpeg?auto=compress&cs=tinysrgb&w=600",
-            title: "Youth Development",
-            text: "Our Youth Development and Upskilling program is committed to empowering young people with the skills and resources they need to succeed.",
-            link: "/donation",
-            raised: "20000",
-            goal: "80000"
-        },
-        {
-            id: 4,
-            image: "https://images.pexels.com/photos/10252682/pexels-photo-10252682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "Beyond The Blaze",
-            text: "Beyond the Blaze is dedicated to helping victims of fires by providing necessary household goods and support during their time of need.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        },
-        {
-            id: 5,
-            image: "https://images.unsplash.com/photo-1547226706-af7e2c20bcea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
-            title: "Back To School Adopt A Child",
-            text: "BACK 2 SCHOOL is committed to providing school uniforms, stationary, and other resources to support children in their education journey.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        },
-        {
-            id: 6,
-            image: "https://images.pexels.com/photos/196648/pexels-photo-196648.jpeg?auto=compress&cs=tinysrgb&w=600",
-            title: "Holiday Programs",
-            text: "Our Holiday Programs provide public holiday events for the community to enjoy and come together to celebrate.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        },
-        {
-            id: 7,
-            image: "https://images.unsplash.com/photo-1557844352-761f2565b576?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            title: "Pensioner Market",
-            text: "Our Pensioners Market is committed to giving back to the elderly community by providing fresh vegetables and food supplies.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        },
-        {
-            id: 8,
-            image: "https://images.pexels.com/photos/7114755/pexels-photo-7114755.jpeg?auto=compress&cs=tinysrgb&w=600",
-            title: "Flourish",
-            text: "FLOURISH is dedicated to addressing teen pregnancy by providing support, education, and resources to young parents in need.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        },
-        {
-            id: 9,
-            image: "https://images.unsplash.com/photo-1639696318296-2079d8a9216b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            title: "Feeding Scheme",
-            text: "Our Feeding Scheme provides food to the communities of Heideveld and Bonteheuwel through our dedicated kitchens and volunteers.",
-            link: "/donation",
-            raised: "1000",
-            goal: "80000"
-        }
-    ]);
 
     onMount(() => {
         if(id){
@@ -137,48 +184,10 @@ const SelectDonation: Component = () => {
             const iconRite = document.getElementById(`checkProgram${id}`);
             iconRite?.classList.remove("hidden");
             setButtonSelect(true);
-            const programSelected = programPost().filter(p  => p.id === parseInt(id));
+            const programSelected = programPost.filter(p  => p.id === parseInt(id));
             setFormData((prv) => ({...prv, program: programSelected[0].title}))
         }
     })
-
-    const [amountList, setAmountList] = createSignal([
-        {
-            id: 1,
-            amount: '50',
-            checked: false,
-        },
-        {
-            id: 2,
-            amount: '100',
-            checked: false,
-        },
-        {
-            id: 3,
-            amount: '300',
-            checked: false,
-        },
-        {
-            id: 4,
-            amount: '500',
-            checked: false,
-        },
-        {
-            id: 5,
-            amount: '800',
-            checked: false,
-        },
-        {
-            id: 6,
-            amount: '1000',
-            checked: false,
-        },
-        {
-            id: 7,
-            amount: '2 ',
-            checked: false,
-        },
-    ])
 
     const options = { 
         duration: 1000,
@@ -192,6 +201,7 @@ const SelectDonation: Component = () => {
           },
         },
     };
+
     const options2 = { 
         duration: 1000,
         loop: true,
@@ -213,7 +223,7 @@ const SelectDonation: Component = () => {
         const iconRite = document.getElementById(`checkProgram${e}`);
         iconRite?.classList.remove("hidden");
         setButtonSelect(true);
-        const programSelected = programPost().filter(p  => p.id === e);
+        const programSelected = programPost.filter(p  => p.id === e);
         setFormData((prv) => ({...prv, program: programSelected[0].title}))
         setFormDataError((prv) => ({...prv,program: ""}))
     }
@@ -227,7 +237,7 @@ const SelectDonation: Component = () => {
         divBox2?.classList.remove("hidden");
         const iconRite = document.getElementById(`checkAmount${e}`);
         iconRite?.classList.remove("hidden");
-        const amountSelected = amountList().filter(p  => p.id === e);
+        const amountSelected = amountList.filter(p  => p.id === e);
         setFormData((prv) => ({...prv, amount: amountSelected[0].amount}))
         setButtonAmountSelect(true);
         setFormDataError((prv) => ({...prv,amount: ""}))
@@ -239,7 +249,7 @@ const SelectDonation: Component = () => {
     }
 
     const handlePersonalErrors = (e: any) => {
-        const {name, value} = e.currentTarget;
+        const { name } = e.currentTarget;
         setFormDataError((prv) => ({...prv, [name]: ""}));
     }
 
@@ -274,12 +284,12 @@ const SelectDonation: Component = () => {
             return
         }
         setDetailsCompleted(true)
-        // setProgram(program);
-        // setAmount(amount);
-        // setName(name);
-        // setSurname(surname);
-        // setEmail(email);
-        // setCellphone(cellphone);
+        setProgram(program);
+        setAmount(amount);
+        setName(name);
+        setSurname(surname);
+        setEmail(email);
+        setCellphone(cellphone);
         var link = document.getElementById('checkout-button');
         link?.click()
     }
@@ -300,7 +310,7 @@ const SelectDonation: Component = () => {
                     </div>
                     <SliderProvider>
                             <Slider options={options}>
-                                <For each={programPost()}>{
+                                <For each={programPost}>{
                                     (p) => 
                                     <div class="w-1/3 bg-stone-100 relative  rounded-sm overflow-hidden shadow-xl">
                                         <div class="bg-gray-200 h-48 shadow" style={{"background-image":`url(${p.image})`,"background-size":"cover"}}>
@@ -311,7 +321,7 @@ const SelectDonation: Component = () => {
                                             <div class="w-full p-3">
                                                 <button 
                                                     class={buttonSelect() ? "w-full h-10 bg-blue-500 hover:bg-blue-600 text-white rounded cursor-not-allowed" : "w-full h-10 bg-blue-500 hover:bg-blue-600 text-white rounded"}
-                                                    onClick={(e) => handleProgram(p.id)}
+                                                    onClick={() => handleProgram(p.id)}
                                                     disabled={buttonSelect()}
                                                 >
                                                     Donate
@@ -347,16 +357,16 @@ const SelectDonation: Component = () => {
                         </div>
                         <SliderProvider>
                             <Slider options={options2}>
-                                <For each={amountList()}>{
+                                <For each={amountList}>{
                                     (a) => 
                                     <button 
-                                        onClick={(e) => handleAmount(a.id)} 
+                                        onClick={() => handleAmount(a.id)} 
                                         class={buttonAmountSelect() ? "w-1/3 relative text-gray-600 border border-gray-300 rounded-full py-5 text-center cursor-not-allowed" :  "w-1/3 relative text-gray-600 border border-gray-300 rounded-full py-5 text-center" }
                                         disabled={buttonAmountSelect()}
                                     >
                                         R {a.amount}
                                         
-                                        <div id={'amountBox' + a.id.toString()} class="bg-green-600 flex bg-opacity-60 text-white rounded-full h-full hidden w-full top-0">
+                                        <div id={'amountBox' + a.id.toString()} class="bg-green-600 flex bg-opacity-60 text-white rounded-full h-full w-full top-0">
                                             <IoCheckmarkOutline id={'checkAmount'+ a.id.toString()} class="text-3xl m-auto border-2 hidden rounded-full  border-white"/>
                                             <input type="radio" class="hidden" id={'amount' + a.id.toString()} name="program"/>
                                         </div>
