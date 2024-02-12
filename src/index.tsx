@@ -14,6 +14,7 @@ import WhoAreWe from './pages/WhoAreWe';
 import Donate from './pages/Donate';
 import Affiliation from './pages/Affiliation';
 import { DonationContextProvider } from './globalContext/DonationsContext';
+import Notification from './pages/Notification';
 
 render(() => (
   <DonationContextProvider>
@@ -26,6 +27,7 @@ render(() => (
     <Route path="/donation" component={Donate} />
     <Route path="/donation/:id" component={Donate} />
     <Route path="/affiliation" component={Affiliation} />
+    <Route path="/notification" component={Notification} />
     <Route path="/*" component={NotFound} />
   </Router>
   </DonationContextProvider>

@@ -64,7 +64,7 @@ const ContactForm:Component = () => {
         }
         // alert(JSON.stringify(formData()))
         setLoading(true);
-        axios.post('https://us-central1-vanessa-7e09c.cloudfunctions.net/api/contact', {
+        axios.post('https://us-central1-hopeforthefuture-19d04.cloudfunctions.net/api/contact', {
             name,
             surname,
             cellphone,
