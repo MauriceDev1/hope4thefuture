@@ -45,7 +45,7 @@ const Nav:Component = () => {
     ]
     return (
         <>
-        <nav class="sticky top-0 bg-white py-1 shadow-sm z-50">
+        <nav class="fixed sm:sticky top-0 bg-white py-1 shadow-sm z-50">
             <div class="w-11/12 md:w-10/12 m-auto flex justify-between items-center">
                 <div>
                     <a href="/">
