@@ -59,7 +59,7 @@ const programPost: {
     {
         id: 1,
         image: "https://images.pexels.com/photos/5723194/pexels-photo-5723194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title: "Gender Base:any[]d Violence",
+        title: "Gender Based Violence",
         text: "Our Gender-Based Violence program is committed to ending violence against women and children and providing support for survivors.",
         link: "/donation",
         raised: "10000",
@@ -366,7 +366,7 @@ const SelectDonation: Component = () => {
                                     >
                                         R {a.amount}
                                         
-                                        <div id={'amountBox' + a.id.toString()} class="bg-green-600 flex bg-opacity-60 text-white rounded-full h-full w-full top-0">
+                                        <div id={'amountBox' + a.id.toString()} class="bg-green-600 flex bg-opacity-60 text-white hidden rounded-full h-full w-full top-0">
                                             <IoCheckmarkOutline id={'checkAmount'+ a.id.toString()} class="text-3xl m-auto border-2 hidden rounded-full  border-white"/>
                                             <input type="radio" class="hidden" id={'amount' + a.id.toString()} name="program"/>
                                         </div>
