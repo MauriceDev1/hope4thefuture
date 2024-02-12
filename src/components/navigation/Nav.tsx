@@ -93,7 +93,7 @@ const Nav:Component = () => {
                     </button>
                 }</For>
                 </ul>
-                <button class="absolute bottom-0">
+                <button onClick={() => handleMobileLink('/donation')} class="absolute bottom-3 bg-black w-full h-10 rounded">
                     Donate
                 </button>
             </div>
