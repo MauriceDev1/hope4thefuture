@@ -6,7 +6,7 @@ interface HeroProps {
 
 const Hero:Component<HeroProps> = ({image}) => {
     return(
-        <div class="h-96 w-full bg-gray-100" style={{"background-image":`url(${image})`, "background-size":'cover'}}>
+        <div class="hidden md:flex h-96 w-full bg-gray-100" style={{"background-image":`url(${image})`, "background-size":'cover'}}>
 
         </div>
     )
