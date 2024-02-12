@@ -64,6 +64,8 @@ const Nav:Component = () => {
                 <div>
                     <ul class="hidden md:flex gap-16">
                         {Links.map((l) => (
+                            l.text === "Home"
+                            ? null :
                             <a href={l.link}>
                                 <li>
                                     {l.text}
