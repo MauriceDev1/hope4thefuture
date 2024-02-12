@@ -1,5 +1,6 @@
 import { Component, For } from "solid-js";
 import Hero from "../components/Hero";
+import HomeBackground from "../assets/images/home.jpg";
 
 const Programs:Component = () => {
 
@@ -89,7 +90,7 @@ const Programs:Component = () => {
 
     return (
         <>
-            <Hero />
+            <Hero image={HomeBackground}/>
             
         <div class="w-full py-10 flex">
             <div class="w-11/12 sm:w-10/12 m-auto sm:px-4 flex flex-wrap">
