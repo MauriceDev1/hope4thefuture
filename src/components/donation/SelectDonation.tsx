@@ -39,12 +39,7 @@ const amountList:{
         id: 6,
         amount: '1000',
         checked: false,
-    },
-    {
-        id: 7,
-        amount: '2 ',
-        checked: false,
-    },
+    }
 ]);
 
 const programPost: {

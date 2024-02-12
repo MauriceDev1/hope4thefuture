@@ -6,7 +6,7 @@ const ProgramHome:Component = () => {
         <div class="w-full py-10 flex">
             <div class="w-11/12 sm:w-10/12 py-5 flex flex-wrap m-auto">
                 <div class="w-full sm:w-1/2 px-5 sm:px-5">
-                    <div class="bg-red-300 h-64 xl:h-[55.5vh] shadow-lg rounded-sm" style={{'background-image': 'url(https://images.pexels.com/photos/5699775/pexels-photo-5699775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)', "background-size":"cover"}}>
+                    <div class="bg-gray-50 h-64 xl:h-[55.5vh] shadow-lg rounded-sm" style={{'background-image': 'url(https://images.pexels.com/photos/5699775/pexels-photo-5699775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)', "background-size":"cover"}}>
 
                     </div>
                 </div>
