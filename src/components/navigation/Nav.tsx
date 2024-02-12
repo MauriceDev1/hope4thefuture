@@ -16,21 +16,26 @@ const Nav:Component = () => {
     const Links = [
         {
             id:1,
+            text: 'Home',
+            link: '/',
+        },
+        {
+            id:2,
             text: 'About',
             link: '/about',
         },
         {
-            id:2,
+            id:3,
             text: 'Programs',
             link: '/programs',
         },
         {
-            id:3,
+            id:4,
             text: 'Who Are We',
             link: '/who_are_we',
         },
         {
-            id:4,
+            id:5,
             text: 'Contact',
             link: '/contact',
         },
@@ -45,7 +50,7 @@ const Nav:Component = () => {
     ]
     return (
         <>
-        <nav class="fixed sm:sticky top-0 bg-white py-1 shadow-sm z-50">
+        <nav class="sticky top-0 bg-white py-1 shadow-sm z-50">
             <div class="w-11/12 md:w-10/12 m-auto flex justify-between items-center">
                 <div>
                     <a href="/">
@@ -82,7 +87,7 @@ const Nav:Component = () => {
             </div>    
         </nav>
         <div class={`fixed ${toggleMobileMenu() ? 'w-[300px]' : 'w-0'} h-screen bg-purple-400 flex overflow-hidden duration-300 ease-in-out z-50 top-0 right-0 2xl:hidden`}>
-            <div class="w-10/12 relative mx-auto text-white">
+            <div class="w-10/12 relative mx-auto text-white h-full">
                 <ul class="">
                 <For each={Links}>{(l) => 
                     <button
@@ -93,7 +98,7 @@ const Nav:Component = () => {
                     </button>
                 }</For>
                 </ul>
-                <button onClick={() => handleMobileLink('/donation')} class="absolute bottom-3 bg-black w-full h-10 rounded">
+                <button onClick={() => handleMobileLink('/donation')} class="fixed bottom-3 bg-black w-[250px] h-10 rounded">
                     Donate
                 </button>
             </div>
