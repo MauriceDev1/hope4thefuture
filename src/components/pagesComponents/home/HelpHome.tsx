@@ -1,11 +1,12 @@
 import { Component } from "solid-js";
+import BOy from "../../../assets/images/boy.jpg"
 
 const HelpHome:Component = () => {
     return (
         <div class="w-full flex flex-wrap sm:py-16">
             <div class="flex flex-wrap w-10/12 sm:w-10/12 m-auto py-16 sm:py-0">
                 <div class="w-full sm:w-1/2 flex">
-                    <div class="w-full sm:w-9/12 bg-gray-200 h-[45vh] sm:h-[60vh] mx-auto shadow-xl overflow-hidden" style={{"background-image":"url(https://images.pexels.com/photos/6995215/pexels-photo-6995215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)","background-size":"cover"}}>
+                    <div class="w-full sm:w-9/12 bg-gray-200 h-[45vh] sm:h-[60vh] mx-auto shadow-xl overflow-hidden" style={{"background-image":`url(${BOy})`,"background-size":"cover"}}>
                         
                     </div>
                 </div>

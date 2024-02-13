@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import Profile from "../../../assets/images/Profile.png"
 
 const TeamSection: Component = () => {
     return (
@@ -11,7 +12,7 @@ const TeamSection: Component = () => {
                         <h3 class="text-teal-500">DEDICATED AND PASSIONATE TEAM</h3>
                     </div>
                     <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
+                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                         </div>
                         <div class="p-4">
@@ -24,7 +25,7 @@ const TeamSection: Component = () => {
                         </div>
                     </div>
                     <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
+                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                         </div>
                         <div class="p-4">
@@ -37,7 +38,7 @@ const TeamSection: Component = () => {
                         </div>
                     </div>
                     <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url()`,"background-size":"cover"}}>
+                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                         </div>
                         <div class="p-4">
@@ -50,7 +51,7 @@ const TeamSection: Component = () => {
                         </div>
                     </div>
                     <div class="w-1/2 sm:w-1/4">
-                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url()`,"background-size":"cover"}}>
+                        <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                         </div>
                         <div class="p-4">
@@ -71,7 +72,7 @@ const TeamSection: Component = () => {
                             <h3 class="text-white">OUR BOARD OF DIRECTORS</h3>
                         </div>
                         <div class="w-1/2 sm:w-1/4">
-                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
+                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                             </div>
                             <div class="p-4">
@@ -84,7 +85,7 @@ const TeamSection: Component = () => {
                             </div>
                         </div>
                         <div class="w-1/2 sm:w-1/4">
-                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url()`,"background-size":"cover"}}>
+                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                             </div>
                             <div class="p-4">
@@ -97,7 +98,7 @@ const TeamSection: Component = () => {
                             </div>
                         </div>
                         <div class="w-1/2 sm:w-1/4">
-                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
+                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                             </div>
                             <div class="p-4">
@@ -110,7 +111,7 @@ const TeamSection: Component = () => {
                             </div>
                         </div>
                         <div class="w-1/2 sm:w-1/4">
-                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3">
+                            <div class="w-40 sm:w-48 h-40 sm:h-48 bg-gray-100 rounded-full m-auto mt-3" style={{"background-image":`url(${Profile})`,"background-size":"cover"}}>
 
                             </div>
                             <div class="p-4">
@@ -126,7 +127,7 @@ const TeamSection: Component = () => {
                 </div>
 
             </div>
-            <div class="w-11/12 sm:w-9/12 m-auto px-4">
+            {/* <div class="w-11/12 sm:w-9/12 m-auto px-4">
                 <div class="w-full flex flex-wrap pt-16">
                     <div class="w-full pb-10">
                         <h3 class="text-teal-500">OUR ADVISORY GROUP</h3>
@@ -146,7 +147,7 @@ Maurice Volkwyn, 36, is a passionate coder who studied at UNISA. With over a dec
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
     )

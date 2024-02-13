@@ -1,4 +1,6 @@
 import { Component } from "solid-js";
+import Heart from "../../../assets/images/heart.png"
+import Food from "../../../assets/images/food.jpg"
 
 const AboutHome:Component = () => {
     return (
@@ -18,10 +20,10 @@ const AboutHome:Component = () => {
                 </div>
                 <div class="w-full sm:w-1/2 flex pt-5 pb-20 sm:pb-0">
                     <div class="w-6/12 sm:w-6/12 bg-purple-300 h-[35vh] m-auto flex flex-wrap relative">
-                        <div class="absolute shadow -top-28 -left-24 w-72 sm:w-80 bg-gray-300 h-80">
+                        <div class="absolute shadow -top-28 -left-24 w-72 sm:w-80 bg-gray-300 h-80"  style={{"background-image":`url(${Food})`, "background-size":"cover"}}>>
 
                         </div>
-                        <div class="absolute shadow-lg -bottom-28 -right-24 w-72 sm:w-80 bg-gray-400 h-80">
+                        <div class="absolute shadow-lg -bottom-28 -right-24 w-72 sm:w-80 bg-gray-400 h-80" style={{"background-image":`url(${Heart})`, "background-size":"cover"}}>
 
                         </div>
                     </div>
