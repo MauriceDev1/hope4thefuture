@@ -11,13 +11,10 @@ const Address:Component = () => {
                 </div>
                 <div class="w-full flex flex-wrap items-center">
                     <div class="w-full sm:w-1/2 text-gray-500">
-                        <div class="flex items-center py-5">
-                            <p class="font-semibold text-xl w-10"><IoCallSharp /></p>
-                            <p>021 023 2870</p>
-                        </div>
+                        
                         <div class="flex items-center py-5">
                             <p class="font-semibold text-xl w-10"><IoLogoWhatsapp /></p>
-                            <p>0760736777</p>
+                            <p>+1(702)276-6496</p>
                         </div>
                         <div class="flex items-center py-5">
                             <p class="font-semibold text-xl w-10"><IoMailSharp /></p>
